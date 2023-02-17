@@ -11,7 +11,7 @@
  * is to have dmenu appear on top of the bar when using said patch in dwm.
  * https://github.com/bakkeby/patches/wiki/barpadding
  */
-#define BARPADDING_PATCH 1
+#define BARPADDING_PATCH 0
 
 /* This patch adds a border around the dmenu window. It is intended to be used with the center
  * or xyw patches, to make the menu stand out from similarly coloured windows.
@@ -61,7 +61,7 @@
  * portions of the string to be matched.
  * https://tools.suckless.org/dmenu/patches/fuzzymatch/
  */
-#define FUZZYMATCH_PATCH 0
+#define FUZZYMATCH_PATCH 1
 
 /* Adds fzf-like functionality for dmenu.
  * Refer to https://github.com/DAFF0D11/dafmenu/ for documentation and example use cases.
@@ -133,7 +133,7 @@
 /* This patch adds basic mouse support for dmenu.
  * https://tools.suckless.org/dmenu/patches/mouse-support/
  */
-#define MOUSE_SUPPORT_PATCH 0
+#define MOUSE_SUPPORT_PATCH 1
 
 /* Without this patch when you press Ctrl+Enter dmenu just outputs current item and it is not
  * possible to undo that.
@@ -238,7 +238,7 @@
 /* This patch changes the behaviour of matched items and the Tab key to allow tab completion.
  * https://tools.suckless.org/dmenu/patches/prefix-completion/
  */
-#define PREFIXCOMPLETION_PATCH 0
+#define PREFIXCOMPLETION_PATCH 1
 
 /* This patch adds an option -ps to specify an item by providing the index that should be
  * pre-selected.
@@ -326,7 +326,7 @@
 /* Adds extended window manager hints such as _NET_WM_WINDOW_TYPE and _NET_WM_WINDOW_TYPE_DOCK.
  * https://github.com/Baitinq/dmenu/blob/master/patches/dmenu-wm_type.diff
  */
-#define WMTYPE_PATCH 0
+#define WMTYPE_PATCH 1
 
 /* This patch adds the ability to configure dmenu via Xresources. At startup, dmenu will read and
  * apply the resources named below:
@@ -346,4 +346,4 @@
  * The center patch takes precedence over the XYW patch if enabled.
  * https://tools.suckless.org/dmenu/patches/xyw/
  */
-#define XYW_PATCH 0
+#define XYW_PATCH 1
