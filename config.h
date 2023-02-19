@@ -90,7 +90,7 @@ static unsigned int lines      = 0;
 static unsigned int columns    = 0;
 #endif // GRID_PATCH
 #if LINE_HEIGHT_PATCH
-static unsigned int lineheight = 37;         /* -h option; minimum height of a menu line     */
+static unsigned int lineheight = 25;         /* -h option; minimum height of a menu line     */
 static unsigned int min_lineheight = 8;
 #endif // LINE_HEIGHT_PATCH
 #if NAVHISTORY_PATCH
