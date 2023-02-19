@@ -17,7 +17,12 @@
  * or xyw patches, to make the menu stand out from similarly coloured windows.
  * http://tools.suckless.org/dmenu/patches/border/
  */
-#define BORDER_PATCH 0
+#define BORDER_PATCH 1
+
+/* Addon for BORDER_PATCH to only display the bottom border. Mainly useful for
+ * embedding dmenu in windows.
+ */
+#define BOTTOM_BORDER_PATCH 1
 
 /* This patch makes dmenu case-insensitive by default, replacing the
  * case-insensitive -i option with a case sensitive -s option.

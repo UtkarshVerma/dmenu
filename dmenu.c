@@ -598,7 +598,7 @@ drawmenu(void)
 	#if BARPADDING_PATCH
 	rpad += 2 * sp;
 	#endif // BARPADDING_PATCH
-	#if BORDER_PATCH
+	#if BORDER_PATCH && !BOTTOM_BORDER_PATCH
 	rpad += border_width;
 	#endif // BORDER_PATCH
 	#endif // NUMBERS_PATCH
@@ -1731,7 +1731,11 @@ setup(void)
 		#elif BARPADDING_PATCH
 		x + sp, y + vp, mw - 2 * sp, mh, 0,
 		#elif BORDER_PATCH
+		#if BOTTOM_BORDER_PATCH
+		x - border_width, y - border_width, mw, mh, border_width,
+		#else
 		x, y - (topbar ? 0 : border_width * 2), mw - border_width * 2, mh, border_width,
+		#endif // BOTTOM_BORDER_PATCH
 		#else
 		x, y, mw, mh, 0,
 		#endif // BORDER_PATCH | BARPADDING_PATCH

@@ -19,6 +19,11 @@
  */
 #define BORDER_PATCH 0
 
+/* Addon for BORDER_PATCH to only display the bottom border. Mainly useful for
+ * embedding dmenu in windows.
+ */
+#define BOTTOM_BORDER_PATCH 1
+
 /* This patch makes dmenu case-insensitive by default, replacing the
  * case-insensitive -i option with a case sensitive -s option.
  * http://tools.suckless.org/dmenu/patches/case-insensitive/
