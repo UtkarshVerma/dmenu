@@ -122,7 +122,7 @@
  * treat dmenu more as a "window" rather than as an overlay.
  * https://tools.suckless.org/dmenu/patches/managed/
  */
-#define MANAGED_PATCH 1
+#define MANAGED_PATCH 0
 
 /* This patch adds an additional color scheme for highlighting entries adjacent to the current
  * selection.
