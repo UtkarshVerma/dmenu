@@ -1895,6 +1895,37 @@ main(int argc, char *argv[])
 	int fast = 0;
 	#endif // NON_BLOCKING_STDIN_PATCH
 
+	#if XRESOURCES_PATCH
+	if (!setlocale(LC_CTYPE, "") || !XSupportsLocale())
+		fputs("warning: no locale support\n", stderr);
+	if (!(dpy = XOpenDisplay(NULL)))
+		die("cannot open display");
+	screen = DefaultScreen(dpy);
+	root = RootWindow(dpy, screen);
+
+	for (i = 1; i < argc; i++) {
+		if (!strcmp(argv[i], "-w")) {
+			embed = argv[++i];
+			break;
+		}
+	}
+	i = 0;
+
+	if (!embed || !(parentwin = strtol(embed, NULL, 0)))
+		parentwin = root;
+	if (!XGetWindowAttributes(dpy, parentwin, &wa))
+		die("could not get embedding window attributes: 0x%lx",
+		    parentwin);
+
+	#if ALPHA_PATCH
+	xinitvisual();
+	drw = drw_create(dpy, screen, root, wa.width, wa.height, visual, depth, cmap);
+	#else
+	drw = drw_create(dpy, screen, root, wa.width, wa.height);
+	#endif // ALPHA_PATCH
+	readxresources();
+	#endif // XRESOURCES_PATCH
+
 	for (i = 1; i < argc; i++)
 		/* these options take no arguments */
 		if (!strcmp(argv[i], "-v")) {      /* prints version information */
@@ -2068,26 +2099,6 @@ main(int argc, char *argv[])
 			usage();
 
 	#if XRESOURCES_PATCH
-	if (!setlocale(LC_CTYPE, "") || !XSupportsLocale())
-		fputs("warning: no locale support\n", stderr);
-	if (!(dpy = XOpenDisplay(NULL)))
-		die("cannot open display");
-	screen = DefaultScreen(dpy);
-	root = RootWindow(dpy, screen);
-	if (!embed || !(parentwin = strtol(embed, NULL, 0)))
-		parentwin = root;
-	if (!XGetWindowAttributes(dpy, parentwin, &wa))
-		die("could not get embedding window attributes: 0x%lx",
-		    parentwin);
-
-	#if ALPHA_PATCH
-	xinitvisual();
-	drw = drw_create(dpy, screen, root, wa.width, wa.height, visual, depth, cmap);
-	#else
-	drw = drw_create(dpy, screen, root, wa.width, wa.height);
-	#endif // ALPHA_PATCH
-	readxresources();
-
 	#if PANGO_PATCH
 	if (!drw_font_create(drw, font))
 		die("no fonts could be loaded.");
