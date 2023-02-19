@@ -33,14 +33,14 @@
 /* Minor patch to enable the use of Ctrl+v (XA_PRIMARY) and Ctrl+Shift+v (CLIPBOARD) to paste.
  * By default dmenu only supports Ctrl+y and Ctrl+Shift+y to paste.
  */
-#define CTRL_V_TO_PASTE_PATCH 0
+#define CTRL_V_TO_PASTE_PATCH 1
 
 /* This patch adds a flag (-dy) which makes dmenu run the command given to it whenever input
  * is changed with the current input as the last argument and update the option list according
  * to the output of that command.
  * https://tools.suckless.org/dmenu/patches/dynamicoptions/
  */
-#define DYNAMIC_OPTIONS_PATCH 0
+#define DYNAMIC_OPTIONS_PATCH 1
 
 /* This patch will allow for emojis on the left side with a colored background when selected.
  * To test this try running:
@@ -238,7 +238,7 @@
 /* This patch changes the behaviour of matched items and the Tab key to allow tab completion.
  * https://tools.suckless.org/dmenu/patches/prefix-completion/
  */
-#define PREFIXCOMPLETION_PATCH 1
+#define PREFIXCOMPLETION_PATCH 0
 
 /* This patch adds an option -ps to specify an item by providing the index that should be
  * pre-selected.
@@ -326,7 +326,7 @@
 /* Adds extended window manager hints such as _NET_WM_WINDOW_TYPE and _NET_WM_WINDOW_TYPE_DOCK.
  * https://github.com/Baitinq/dmenu/blob/master/patches/dmenu-wm_type.diff
  */
-#define WMTYPE_PATCH 1
+#define WMTYPE_PATCH 0
 
 /* This patch adds the ability to configure dmenu via Xresources. At startup, dmenu will read and
  * apply the resources named below:
