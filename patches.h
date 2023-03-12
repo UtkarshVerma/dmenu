@@ -249,7 +249,7 @@
  * pre-selected.
  * https://tools.suckless.org/dmenu/patches/preselect/
  */
-#define PRESELECT_PATCH 0
+#define PRESELECT_PATCH 1
 
 /* This patch allows dmenu to print out the 0-based index of matched text instead of the matched
  * text itself. This can be useful in cases where you would like to select entries from one array
