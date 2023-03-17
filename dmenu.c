@@ -1631,8 +1631,8 @@ setup(void)
 			y = info[i].y_org + ((info[i].height - mh) / 2);
 		} else {
 			#if XYW_PATCH
-			x = info[i].x_org + dmx;
-			y = info[i].y_org + (topbar ? dmy : info[i].height - mh - dmy);
+			x = dmx;
+			y = topbar ? dmy : info[i].height - mh - dmy;
 			mw = (dmw>0 ? dmw : info[i].width);
 			#else
 			x = info[i].x_org;
@@ -1641,8 +1641,8 @@ setup(void)
 			#endif // XYW_PATCH
 		}
 		#elif XYW_PATCH
-		x = info[i].x_org + dmx;
-		y = info[i].y_org + (topbar ? dmy : info[i].height - mh - dmy);
+		x = dmx;
+		y = topbar ? dmy : info[i].height - mh - dmy;
 		mw = (dmw>0 ? dmw : info[i].width);
 		#else
 		x = info[i].x_org;
