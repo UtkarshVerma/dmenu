@@ -220,7 +220,7 @@
  * it with dots. All data from stdin will be ignored.
  * https://tools.suckless.org/dmenu/patches/password/
  */
-#define PASSWORD_PATCH 0
+#define PASSWORD_PATCH 1
 
 /* This patch allows the selected text to be piped back out with dmenu. This can be useful if you
  * want to display the output of a command on the screen.
